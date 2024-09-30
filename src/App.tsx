@@ -1,10 +1,15 @@
-import logo from './assets/logo-astroatlas.svg'
+import './styles/global.scss'
+import { Getstarted } from './pages/getstarted.tsx'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function App() {
-  return(
-    <>
-      <img src={logo} style={{ width: '150px', height: '150px', color: 'red' }} />
-    </>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Getstarted />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
