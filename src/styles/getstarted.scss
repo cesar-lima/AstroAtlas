@@ -51,9 +51,9 @@ footer {
     padding: 40px;
     margin-top: 5vh;
 
-    a{
+    a {
         text-decoration: none;
-        
+
         button {
             display: flex;
             align-items: center;
@@ -68,16 +68,15 @@ footer {
             cursor: pointer;
             background-color: #9898ff;
             transition: 0.3s;
-    
+
             div:nth-child(1) {
                 margin-top: 4px;
             }
-    
         }
     }
 
 
-    button:hover{
+    button:hover {
         background-color: #ffffff;
         color: black;
     }
