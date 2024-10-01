@@ -1,0 +1,84 @@
+body {
+    background: url(../assets/getstarted-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.container-getstarted {
+    background: linear-gradient(transparent, #000000);
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+
+    .logo {
+        width: 70px;
+    }
+}
+
+header {
+    margin-top: 20vh;
+    padding: 30px 40px;
+
+    p {
+        span {
+            font-family: "Kaushan Script", cursive;
+            font-size: 48px;
+            background: linear-gradient(90deg, #d0bdfc, #d0bdfc, #7a44f8);
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    p:nth-child(1) {
+        font-weight: 700;
+        font-size: 46px;
+    }
+
+    p:nth-child(2) {
+        font-weight: 500;
+        font-size: 24px;
+    }
+}
+
+footer {
+    padding: 40px;
+    margin-top: 5vh;
+
+    a{
+        text-decoration: none;
+        
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 50px;
+            border: none;
+            padding: 12px 32px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #9898ff;
+            transition: 0.3s;
+    
+            div:nth-child(1) {
+                margin-top: 4px;
+            }
+    
+        }
+    }
+
+
+    button:hover{
+        background-color: #ffffff;
+        color: black;
+    }
+}
