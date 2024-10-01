@@ -2,40 +2,57 @@ import '../styles/getstarted.scss'
 
 import logo from '../assets/logo-astroatlas.svg'
 import { ArrowSquareOut } from '@phosphor-icons/react'
+import { Loader } from '../components/Loader'
+
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
 
 export function Getstarted() {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+  
+      return () => clearTimeout(timer);
+    }, []);
+
     return (
-        <div className="container-getstarted">
-            <nav>
-                <div className="logo">
-                    <img src={logo} alt="logo astro atlas" />
-                </div>
+        <>
+            {loading && <Loader />}
 
-                <div>
-                    <img src="" alt="" />
-                </div>
-            </nav>
+            <div className="container-getstarted">
+                <nav>
+                    <div className="logo">
+                        <img src={logo} alt="logo astro atlas" />
+                    </div>
 
-            <header>
-                <p>
-                    Let's Explore the <span>Universe!&nbsp;</span>
-                </p>
+                    <div>
+                        <img src="" alt="" />
+                    </div>
+                </nav>
 
-                <p>
-                    Unveil the secrets of the planets and explore the universe.
-                </p>
-            </header>
+                <header>
+                    <p>
+                        Let's Explore the <span>Universe!&nbsp;</span>
+                    </p>
 
-            <footer>
-                <Link to="/planets">
-                    <button>
-                        <div>Get Started</div>
-                        <ArrowSquareOut size={24}  />
-                    </button>
-                </Link>
-            </footer>
-        </div>
+                    <p>
+                        Unveil the secrets of the planets and explore the universe.
+                    </p>
+                </header>
+
+                <footer>
+                    <Link to="/planets">
+                        <button>
+                            <div>Get Started</div>
+                            <ArrowSquareOut size={24}  />
+                        </button>
+                    </Link>
+                </footer>
+            </div>
+        </>
     )
 }
 
