@@ -33,7 +33,7 @@ export function Getstarted() {
                     </div>
                 </nav>
 
-                <header>
+                <header className="getstarted-header">
                     <p>
                         Let's Explore the <span>Universe!&nbsp;</span>
                     </p>
