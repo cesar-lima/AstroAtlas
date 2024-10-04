@@ -1,0 +1,41 @@
+body{
+    background: linear-gradient(transparent, #000000), url(../assets/getstarted-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.planets-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    section{
+        background-color: #1d1b28c9;
+        border-radius: 60px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .planet-name{
+            padding-top: 32px;
+            font-size: 36pt;
+            letter-spacing: 6px;
+            font-weight: 700;
+            text-shadow: 2px 2px 0px #ffffff46;
+        }
+
+        .planet-infos{
+            padding: 24px 42px;
+        }
+        
+        .planet-image{
+            text-align: center;
+        }
+    }
+}
+
+
