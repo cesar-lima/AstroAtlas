@@ -11,6 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     
     section{
         background-color: #1d1b28c9;
@@ -41,8 +42,9 @@ body{
             
             img{
                 width: 500px;
-                display: inline-block; /* Para permitir a rotação */
-                animation: rotacao 200s linear infinite; /* 2 segundos, linear, infinita */
+                display: inline-block; 
+                animation: rotacao 200s linear infinite; 
+                margin-bottom: 600px;
             }
         }
     }
