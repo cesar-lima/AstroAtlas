@@ -1,7 +1,7 @@
 import '../styles/getstarted.scss'
 
 import logo from '../assets/logo-astroatlas.svg'
-import { ArrowSquareOut } from '@phosphor-icons/react'
+import { ArrowSquareOut, GithubLogo } from '@phosphor-icons/react'
 import { Loader } from '../components/Loader'
 
 import { Link } from 'react-router-dom'
@@ -48,6 +48,13 @@ export function Getstarted() {
                         <button>
                             <div>Get Started</div>
                             <ArrowSquareOut size={24}  />
+                        </button>
+                    </Link>
+
+                    <Link to="https://github.com/cesar-lima/AstroAtlas" target='blank'>
+                        <button>
+                            <div>See code</div>
+                            <GithubLogo size={24}  />
                         </button>
                     </Link>
                 </footer>
