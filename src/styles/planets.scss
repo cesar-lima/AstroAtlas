@@ -4,13 +4,14 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .planets-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     section{
         background-color: #1d1b28c9;
         border-radius: 60px 60px 0px 0px;
@@ -19,21 +20,39 @@ body{
         justify-content: center;
         flex-direction: column;
         align-items: center;
-
+        
         .planet-name{
             padding-top: 32px;
             font-size: 36pt;
             letter-spacing: 6px;
             font-weight: 700;
-            text-shadow: 2px 2px 0px #ffffff46;
+            text-shadow: 3px 3px 0px #9898ff9a;
+            
         }
-
+        
         .planet-infos{
             padding: 24px 42px;
         }
         
         .planet-image{
             text-align: center;
+            margin-top: 50px;
+
+            
+            img{
+                width: 500px;
+                display: inline-block; /* Para permitir a rotação */
+                animation: rotacao 200s linear infinite; /* 2 segundos, linear, infinita */
+            }
+        }
+    }
+
+    @keyframes rotacao {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
         }
     }
 }
