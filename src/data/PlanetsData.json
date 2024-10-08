@@ -1,0 +1,44 @@
+{
+    "planets": [
+        {
+            "name": "MERCURY",
+            "description": "The closest planet to the Sun, known for its rocky surface and extreme temperatures.",
+            "image": "/src/data/mercury.svg"
+        },
+        {
+            "name": "VENUS",
+            "description": "The second planet from the Sun, known for its thick atmosphere and high temperatures.",
+            "image": "/src/data/venus.svg"
+        },
+        {
+            "name": "EARTH",
+            "description": "The third planet from the Sun, known for supporting life and having vast oceans.",
+            "image": "/src/data/earth.svg"
+        },
+        {
+            "name": "MARS",
+            "description": "The fourth planet from the Sun, known as the Red Planet, with a thin atmosphere and dusty terrain.",
+            "image": "/src/data/mars.svg"
+        },
+        {
+            "name": "JUPITER",
+            "description": "The largest planet in the solar system, known for its Great Red Spot and many moons.",
+            "image": "/src/data/jupiter.svg"
+        },
+        {
+            "name": "SATURN",
+            "description": "Famous for its stunning rings, Saturn is the second-largest planet in the solar system.",
+            "image": "/src/data/saturn.svg"
+        },
+        {
+            "name": "URANUS",
+            "description": "The seventh planet from the Sun, known for its blue color and unique tilt.",
+            "image": "/src/data/uranus.svg"
+        },
+        {
+            "name": "NEPTUNE",
+            "description": "The farthest planet from the Sun, known for its deep blue color and strong winds.",
+            "image": "/src/data/neptune.svg"
+        }
+    ]
+}

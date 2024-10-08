@@ -1,10 +1,28 @@
 import '../styles/planets.scss'
 
 import { useEffect, useState } from 'react';
-
 import { Loader } from '../components/Loader';
 import { Previous } from '../components/previous-page-btn';
-import mars from '../assets/mars.png'
+
+import PlanetsData from '../data/PlanetsData.json';
+
+//utilizando tsignore para evitar avisos do ts sobre os import porque as imagens são utilizadas atraves do arquivo PlanetsData.json
+// @ts-ignore
+import mercury from '../data/mercury.svg';
+// @ts-ignore
+import venus from '../data/venus.svg';
+// @ts-ignore
+import earth from '../data/earth.svg';
+// @ts-ignore
+import mars from '../data/mars.svg';
+// @ts-ignore
+import jupiter from '../data/jupiter.svg';
+// @ts-ignore
+import saturn from '../data/saturn.svg';
+// @ts-ignore
+import uranus from '../data/uranus.svg';
+// @ts-ignore
+import neptune from '../data/neptune.svg';
 
 export function Planets() {
   const [loading, setLoading] = useState(true);
@@ -17,6 +35,13 @@ export function Planets() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Estado para armazenar o índice atual do planeta
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  // Captura o planeta atual com base no índice
+  const currentPlanet = PlanetsData.planets[currentIndex];
+
+
   return (
     <>
       {loading && <Loader />}
@@ -26,16 +51,15 @@ export function Planets() {
 
         <section>
           <header className="planet-name">
-            MARS
+            {currentPlanet.name}
           </header>
 
           <article className="planet-infos">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto fuga quia repellendus reiciendis exercitationem ullam, eveniet tempore iusto obcaecati dicta, nostrum voluptatum! Repudiandae inventore nihil, vero voluptas quod nobis at.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto fuga quia repellendus reiciendis exercitationem ullam, eveniet tempore iusto obcaecati dicta, nostrum voluptatum! Repudiandae inventore nihil, vero voluptas quod nobis at.
+            {currentPlanet.description}
           </article>
 
           <div className="planet-image">
-            <img src={mars} alt="planet image" />
+            <img src={currentPlanet.image} alt="planet image" />
           </div>
 
         </section>
