@@ -1,4 +1,4 @@
-body{
+body {
     background: linear-gradient(transparent, #000000), url(../assets/getstarted-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,56 +7,105 @@ body{
     overflow: hidden;
 }
 
-.planets-container{
+.planets-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    
-    section{
-        background-color: #1d1b28c9;
-        border-radius: 60px 60px 0px 0px;
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        
-        .planet-name{
-            padding-top: 32px;
-            font-size: 36pt;
-            letter-spacing: 6px;
-            font-weight: 700;
-            text-shadow: 3px 3px 0px #9898ff9a;
-            
-        }
-        
-        .planet-infos{
-            padding: 24px 42px;
-        }
-        
-        .planet-image{
-            text-align: center;
-            margin-top: 20vh;
 
-            
-            img{
-                width: 500px;
-                display: inline-block; 
-                animation: rotacao 200s linear infinite; 
-                margin-bottom: 100vh;
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100%;
+
+        .change-planet-button{
+            margin-top: -100vh;
+            padding-inline: 9px;
+            max-width: 10%;
+            max-height: 100%;
+            display: flex;
+            flex-direction: column;
+            button{
+                background-color: transparent;
+                border: 1px solid #ffffff;
+                transition: 0.3s;
+                border-radius: 50%;
+                padding-inline: 4px;
+                padding-top: 4px;
+            }
+
+            button:hover{
+                cursor: pointer;
             }
         }
-    }
 
-    @keyframes rotacao {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
+        section {
+            background-color: #1d1b28c9;
+            border-radius: 60px 60px 0px 0px;
+            min-width: 80%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 100vh;
+            
+            .planet-name {
+                padding-top: 32px;
+                font-size: 36pt;
+                letter-spacing: 6px;
+                font-weight: 700;
+                text-shadow: 3px 3px 0px #9898ff9a;
+            }
+    
+            .planet-infos {
+                padding: 24px 42px;
+            }
+    
+            .planet-image {
+                text-align: center;
+                margin-top: 16vh;
+                
+                img {
+                    width: 500px;
+                    max-height: 500px;
+                    display: inline-block;
+                    transform-origin: center center;
+                    animation: orbit 100s linear infinite;
+                }
+            }
         }
     }
 }
 
+@keyframes orbit {
+    0% {
+        transform: translate(0px, -30px) scale(0.5) rotate(0deg); 
+    }
 
+    25% {
+        transform: translate(120px, 0px) scale(0.75) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(0px, 100px) scale(1.2) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-120px, 0px) scale(0.75) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(0px, -30px) scale(0.5) rotate(360deg);
+    }
+}
+
+@keyframes planet-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

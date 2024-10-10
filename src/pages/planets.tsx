@@ -1,12 +1,13 @@
 import '../styles/planets.scss'
 
 import { useEffect, useState } from 'react';
+import { ArrowLeft, ArrowRight } from '@phosphor-icons/react';
 import { Loader } from '../components/Loader';
 import { Previous } from '../components/previous-page-btn';
 
 import PlanetsData from '../data/PlanetsData.json';
 
-//utilizando tsignore para evitar avisos do ts sobre os import porque as imagens são utilizadas atraves do arquivo PlanetsData.json
+//utilizando tsignore para evitar avisos do ts sobre os imports. As imagens são utilizadas atraves do arquivo PlanetsData.json
 // @ts-ignore
 import mercury from '../data/mercury.svg';
 // @ts-ignore
@@ -36,10 +37,18 @@ export function Planets() {
   }, []);
 
   // Estado para armazenar o índice atual do planeta
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Captura o planeta atual com base no índice
   const currentPlanet = PlanetsData.planets[currentIndex];
+
+  const handleNextPlanet = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % PlanetsData.planets.length); // Vai para o próximo planeta
+  };
+
+  const handlePreviousPlanet = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1) % PlanetsData.planets.length); // Vai para o próximo planeta
+  };
 
 
   return (
@@ -49,20 +58,33 @@ export function Planets() {
       <div className="planets-container">
         <Previous />
 
-        <section>
-          <header className="planet-name">
-            {currentPlanet.name}
-          </header>
-
-          <article className="planet-infos">
-            {currentPlanet.description}
-          </article>
-
-          <div className="planet-image">
-            <img src={currentPlanet.image} alt="planet image" />
+        <main>
+          <div className="change-planet-button">
+            <button onClick={handlePreviousPlanet}>
+              <ArrowLeft size={28} color="#ffffff" weight="thin" />
+            </button>
           </div>
 
-        </section>
+          <section>
+            <header className="planet-name">
+              {currentPlanet.name}
+            </header>
+
+            <article className="planet-infos">
+              {currentPlanet.description}
+            </article>
+
+            <div className="planet-image">
+              <img src={currentPlanet.image} alt="planet image" />
+            </div>
+          </section>
+
+          <div className="change-planet-button">
+            <button onClick={handleNextPlanet}>
+              <ArrowRight size={28} color="#ffffff" weight="thin" />
+            </button>
+          </div>
+        </main>
       </div>
     </>
   )
