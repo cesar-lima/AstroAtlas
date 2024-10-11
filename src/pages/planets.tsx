@@ -43,11 +43,14 @@ export function Planets() {
   const currentPlanet = PlanetsData.planets[currentIndex];
 
   const handleNextPlanet = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % PlanetsData.planets.length); // Vai para o próximo planeta
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % PlanetsData.planets.length);
   };
 
   const handlePreviousPlanet = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1) % PlanetsData.planets.length); // Vai para o próximo planeta
+    setCurrentIndex((prevIndex) => (prevIndex - 1) % PlanetsData.planets.length);
+    if (currentIndex === 0) {
+      setCurrentIndex(PlanetsData.planets.length - 1);
+    }
   };
 
 
