@@ -9,21 +9,21 @@ import PlanetsData from '../data/PlanetsData.json';
 
 //utilizando tsignore para evitar avisos do ts sobre os imports. As imagens são utilizadas atraves do arquivo PlanetsData.json
 // @ts-ignore
-import mercury from '../data/mercury.svg';
+import mercury from '../public/mercury.svg';
 // @ts-ignore
-import venus from '../data/venus.svg';
+import venus from '../public/venus.svg';
 // @ts-ignore
-import earth from '../data/earth.svg';
+import earth from '../public/earth.svg';
 // @ts-ignore
-import mars from '../data/mars.svg';
+import mars from '../public/mars.svg';
 // @ts-ignore
-import jupiter from '../data/jupiter.svg';
+import jupiter from '../public/jupiter.svg';
 // @ts-ignore
-import saturn from '../data/saturn.svg';
+import saturn from '../public/saturn.svg';
 // @ts-ignore
-import uranus from '../data/uranus.svg';
+import uranus from '../public/uranus.svg';
 // @ts-ignore
-import neptune from '../data/neptune.svg';
+import neptune from '../public/neptune.svg';
 
 export function Planets() {
   const [loading, setLoading] = useState(true);
