@@ -99,13 +99,3 @@ body {
         transform: translate(0px, -30px) scale(0.5) rotate(360deg);
     }
 }
-
-@keyframes planet-rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
