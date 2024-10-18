@@ -13,20 +13,21 @@ body {
     align-items: center;
     overflow: hidden;
 
-    main{
+    main {
         display: flex;
         align-items: center;
         justify-content: center;
         min-width: 100%;
 
-        .change-planet-button{
+        .change-planet-button {
             margin-top: -100vh;
             padding-inline: 9px;
             max-width: 10%;
             max-height: 100%;
             display: flex;
             flex-direction: column;
-            button{
+
+            button {
                 background-color: transparent;
                 border: 1px solid #ffffff;
                 transition: 0.3s;
@@ -35,7 +36,7 @@ body {
                 padding-top: 4px;
             }
 
-            button:hover{
+            button:hover {
                 cursor: pointer;
             }
         }
@@ -43,29 +44,49 @@ body {
         section {
             background-color: #1d1b28c9;
             border-radius: 60px 60px 0px 0px;
-            min-width: 80%;
+            width: 80%;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
             padding-bottom: 100vh;
-            
-            .planet-name {
+
+            .section-nav {
+                display: flex;
+                align-items: center;
+                gap: 16px;
                 padding-top: 32px;
-                font-size: 36pt;
-                letter-spacing: 6px;
-                font-weight: 700;
-                text-shadow: 3px 3px 0px #9898ff9a;
+
+                .change-planet-button-responsive {
+                    display: none;
+
+                    button {
+                        background-color: transparent;
+                        border: 1px solid #ffffff;
+                        transition: 0.3s;
+                        border-radius: 50%;
+                        padding-inline: 4px;
+                        padding-top: 4px;
+                    }
+                }
+
+                .planet-name {
+                    font-size: 36pt;
+                    letter-spacing: 6px;
+                    font-weight: 700;
+                    text-shadow: 3px 3px 0px #9898ff9a;
+                }
             }
-    
+
+
             .planet-infos {
                 padding: 24px 42px;
             }
-    
+
             .planet-image {
                 text-align: center;
                 margin-top: 16vh;
-                
+
                 img {
                     width: 500px;
                     max-height: 500px;
@@ -78,9 +99,35 @@ body {
     }
 }
 
+@media screen and (max-width: 610px) {
+    .planets-container {
+        main {
+            .change-planet-button {
+                display: none;
+
+                button {
+                    display: none;
+                }
+            }
+
+            section {
+                .section-nav {
+                    .planet-name {
+                        font-size: 24pt;
+                    }
+
+                    .change-planet-button-responsive {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @keyframes orbit {
     0% {
-        transform: translate(0px, -30px) scale(0.5) rotate(0deg); 
+        transform: translate(0px, -30px) scale(0.5) rotate(0deg);
     }
 
     25% {

@@ -68,9 +68,23 @@ export function Planets() {
           </div>
 
           <section>
-            <header className="planet-name">
-              {currentPlanet.name}
-            </header>
+            <div className="section-nav">
+              <div className="change-planet-button-responsive">
+                <button onClick={handlePreviousPlanet}>
+                  <ArrowLeft size={20} color="#ffffff" weight="thin" />
+                </button>
+              </div>
+
+              <header className="planet-name">
+                {currentPlanet.name}
+              </header>
+
+              <div className="change-planet-button-responsive">
+                <button onClick={handleNextPlanet}>
+                  <ArrowRight size={20} color="#ffffff" weight="thin" />
+                </button>
+              </div>
+            </div>
 
             <article className="planet-infos">
               {currentPlanet.description}
