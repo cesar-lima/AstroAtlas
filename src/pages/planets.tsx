@@ -44,13 +44,21 @@ export function Planets() {
 
   const handleNextPlanet = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % PlanetsData.planets.length);
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
   };
-
+  
   const handlePreviousPlanet = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1) % PlanetsData.planets.length);
     if (currentIndex === 0) {
-      setCurrentIndex(PlanetsData.planets.length - 1);
+      setCurrentIndex(PlanetsData.planets.length - 1);  
     }
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
   };
 
   return (
